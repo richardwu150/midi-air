@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- background -->
+  <rect width="32" height="32" rx="4" fill="#050608"/>
+
+  <!-- white key left -->
+  <rect x="5" y="14" width="9" height="14" rx="1" fill="#ddd8c8"/>
+  <!-- white key right -->
+  <rect x="18" y="14" width="9" height="14" rx="1" fill="#ddd8c8"/>
+  <!-- black key -->
+  <rect x="11" y="14" width="10" height="9" rx="1" fill="#050608"/>
+  <!-- key divider line (subtle) -->
+  <line x1="14" y1="23" x2="14" y2="28" stroke="#aaa49a" stroke-width="0.5"/>
+
+  <!-- fingertip dot -->
+  <circle cx="16" cy="8" r="3.5" fill="#fff4d6"/>
+  <!-- soft halo -->
+  <circle cx="16" cy="8" r="5.5" fill="#fff4d6" opacity="0.15"/>
+</svg>
