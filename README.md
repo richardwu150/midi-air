@@ -1,4 +1,4 @@
-# midi-air
+# MIDI Air
 
 **Gesture-controlled synthesizer — play piano with your bare hands in the browser.**
 
