@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XSZRQMJKGN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XSZRQMJKGN');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MidiAir</title>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -9,6 +17,55 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ─────────────────────────── Mobile gate ─────────────────────────── */
+  #mobile-gate {
+    display: none;
+    position: fixed; inset: 0; z-index: 9999;
+    background: #05070a;
+    font-family: 'JetBrains Mono', monospace;
+    color: #e6edf3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px),
+      radial-gradient(120% 90% at 50% 110%, #0a0d12 0%, #05070a 60%, #000 100%);
+  }
+  #mobile-gate.visible { display: flex; }
+  #mobile-gate .gate-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: #6df1ff;
+    opacity: 0.7;
+    margin-bottom: 2.5rem;
+  }
+  #mobile-gate .gate-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    color: #6df1ff;
+    text-shadow: 0 0 18px rgba(109,241,255,0.5);
+    margin-bottom: 0.5rem;
+  }
+  #mobile-gate .gate-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #7d8794;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+  #mobile-gate .gate-hint {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: #e6edf3;
+    opacity: 0.5;
+  }
+  #mobile-gate .gate-hint span {
+    color: #6df1ff;
+    opacity: 1;
+  }
+
   /* ─────────────────────────── Themes ─────────────────────────── */
   :root, body.theme-hud {
     --bg-0: #05070a;
@@ -1262,6 +1319,22 @@
 </style>
 </head>
 <body class="theme-mono">
+
+  <div id="mobile-gate">
+    <div class="gate-tag">MIDIAIR · SYSTEM CHECK</div>
+    <div class="gate-title">DESKTOP ONLY</div>
+    <div class="gate-sub">
+      This interface requires a webcam<br>and a desktop browser to function.
+    </div>
+    <div class="gate-hint">→ open in <span>Chrome</span> on a desktop or laptop</div>
+  </div>
+  <script>
+    (function() {
+      var mobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 1024;
+      if (mobile) document.getElementById('mobile-gate').classList.add('visible');
+    })();
+  </script>
+
   <template id="__bundler_thumbnail" data-bg-color="#05070a">
     <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
       <defs>
